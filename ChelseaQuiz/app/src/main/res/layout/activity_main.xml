@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            style="@style/Question_text_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1) Where do Chelsea play their home matches?" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        <CheckBox
+            android:id="@+id/q1_option1"
+            style="@style/options_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Old Trafford"
+        />
+        <CheckBox
+            android:id="@+id/q1_option2"
+            style="@style/options_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/q1_option1"
+            android:text="Anfield"
+        />
+        <CheckBox
+            android:id="@+id/q1_option3"
+            style="@style/options_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/q1_option1"
+            android:text="Etihad"
+        />
+        <CheckBox
+            android:id="@+id/q1_option4"
+            style="@style/options_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/q1_option2"
+            android:layout_toRightOf="@id/q1_option3"
+            android:text="Stanford Bridge"
+        />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/Question_text_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2) Who is Chelsea's top goal scorer?" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <CheckBox
+                android:id="@+id/q2_option1"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didier Drogba"
+                />
+            <CheckBox
+                android:id="@+id/q2_option2"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/q2_option1"
+                android:text="Frank Lampard"
+                />
+            <CheckBox
+                android:id="@+id/q2_option3"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q2_option1"
+                android:text="Eden Hazard"
+                />
+            <CheckBox
+                android:id="@+id/q2_option4"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q2_option2"
+                android:layout_toRightOf="@id/q2_option3"
+                android:text="Diego Costa"
+                />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/Question_text_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3) Identify this player" />
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/jt"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <CheckBox
+                android:id="@+id/q3_option1"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Terry"
+                />
+            <CheckBox
+                android:id="@+id/q3_option2"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/q3_option1"
+                android:text="Roger Federer"
+                />
+            <CheckBox
+                android:id="@+id/q3_option3"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3_option1"
+                android:text="Rafel Nadal"
+                />
+            <CheckBox
+                android:id="@+id/q3_option4"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3_option2"
+                android:layout_toRightOf="@id/q3_option3"
+                android:text="Novak Djokovic"
+                />
+        </RelativeLayout>
+        <TextView
+            style="@style/Question_text_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4) In which year did Chelsea win their maiden Champions League?" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="2020"
+            android:id="@+id/q4_answer"/>
+        <TextView
+            style="@style/Question_text_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2) Who is Chelsea's most Expensive Player?" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <CheckBox
+                android:id="@+id/q5_option1"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fernando Torres"
+                />
+            <CheckBox
+                android:id="@+id/q5_option2"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/q5_option1"
+                android:text="Eden Hazard"
+                />
+            <CheckBox
+                android:id="@+id/q5_option3"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q5_option1"
+                android:text="Kepa Arizabalaga"
+                />
+            <CheckBox
+                android:id="@+id/q5_option4"
+                style="@style/options_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q5_option2"
+                android:layout_toRightOf="@id/q5_option3"
+                android:text="Magnus Carlsen"
+                />
+        </RelativeLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:background="#FF0000"
+            android:onClick="checkAnswers"/>
+    </LinearLayout>
+</ScrollView>
