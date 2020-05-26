@@ -8,8 +8,8 @@
     android:background="@color/tan_background">
 
     <ImageView
-        android:layout_height="@dimen/list_item_height"
-        android:layout_width="@dimen/list_item_height"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
         android:id = "@+id/image"
         />
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -29,7 +29,7 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:gravity="bottom"
+            android:gravity="center"
             style="@style/CategoryStyle"/>
 
         <TextView
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="top"
+            android:gravity="center"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textStyle="normal"
@@ -47,7 +47,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="top"
+            android:gravity="center"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textStyle="normal"

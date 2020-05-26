@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class ColorsActivity extends AppCompatActivity {
+public class EventActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,6 @@ public class ColorsActivity extends AppCompatActivity {
     }
 
     public static class EventsFragment extends Fragment {
-        // TODO: Rename parameter arguments, choose names that match
-        /**
-         * Clean up the media player by releasing its resources.
-         */
 
         public EventsFragment(){}
         @Override

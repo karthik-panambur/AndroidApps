@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NetworkConnect.iml" filepath="$PROJECT_DIR$/NetworkConnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Application/Application.iml" filepath="$PROJECT_DIR$/Application/Application.iml" group="NetworkConnect/Application" />
+      <module fileurl="file://$PROJECT_DIR$/NetworkConnect.iml" filepath="$PROJECT_DIR$/NetworkConnect.iml" group="NetworkConnect" />
     </modules>
   </component>
 </project>

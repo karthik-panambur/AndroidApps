@@ -1,6 +1,7 @@
 package com.example.android.tourguideapp;
 
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class SiteActivity extends AppCompatActivity {
@@ -10,7 +11,7 @@ public class SiteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new com.example.android.miwok.NumbersFragment())
+                .replace(R.id.container, new com.example.android.tourguideapp.SiteFragment())
                 .commit();
     }
 }

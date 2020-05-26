@@ -12,9 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 
 public class CityAdapter extends ArrayAdapter<City> {
@@ -47,7 +44,7 @@ public class CityAdapter extends ArrayAdapter<City> {
         locationText.setText(City.getLocation());
 
         TextView contactText = (TextView) listItemView.findViewById(R.id.contact);
-        contactText.setText(City.getcontact());
+        contactText.setText(City.getOperatingHours());
 
 
         ImageView image = (ImageView)listItemView.findViewById(R.id.image);

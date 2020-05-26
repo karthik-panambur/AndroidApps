@@ -1,21 +1,25 @@
-package com.example.android.miwok;
+package com.example.android.musicapp;
 
-public class Word {
-    private String english;
-    private String miwok;
+public class Songs {
+    private String mSongName;
+    private String mArtistName;
+    private String mAlbumNAme;
 
-    Word(String english, String miwok){
-        this.english = english;
-        this.miwok = miwok;
+    Songs(String song, String artist, String album){
+        this.mSongName = song;
+        this.mArtistName = artist;
+        this.mAlbumNAme = album;
     }
-    public void setText(String english, String miwok){
-        this.english = english;
-        this.miwok = miwok;
+    public void setText(String song, String artist, String album){
+        this.mSongName = song;
+        this.mArtistName = artist;
+        this.mArtistName = album;
     }
-    public String getDefaultTranslation(){
-        return this.english;
+    public String getSong(){
+        return this.mSongName;
     }
-    public String getMiwokTranslation(){
-        return this.miwok;
+    public String getArtist(){
+        return this.mArtistName;
     }
+    public  String getAlbum(){ return this.mAlbumNAme; }
 }

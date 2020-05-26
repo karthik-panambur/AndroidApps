@@ -10,24 +10,24 @@ import com.example.android.musicapp.R;
 
 import java.util.ArrayList;
 
-public class ArtistActivity extends AppCompatActivity {
+public class NowPlayingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_artist);
-        ArrayList<Songs> Songss = new ArrayList<>();
-        Songss.add(new Songs("red","weṭeṭṭi"));
-        Songss.add(new Songs("green","chokokki"));
-        Songss.add(new Songs("brown","takaakki"));
-        Songss.add(new Songs("gray","topoppi"));
-        Songss.add(new Songs("black","kululli"));
-        Songss.add(new Songs("white","kelelli"));
-        Songss.add(new Songs("dusty yellow","ṭopiisә"));
-        Songss.add(new Songs("mustard yellow","chiwiiṭә"));
+        setContentView(R.layout.activity_now_playing);
+        ArrayList<Songs> songs = new ArrayList<>();
+        songs.add(new Songs("Lost Stars","Kiera Knightley","Water City"));
+        songs.add(new Songs("Beneath The Surface","Dream heater","Primorsk"));
+        songs.add(new Songs("Never Gonna Say I'm Sorry","Ace of Base","Georgopool"));
+        songs.add(new Songs("Johny B Goode","Chuck Berry","Mylta"));
+        songs.add(new Songs("Evergreen","Barbra Streisand","Tovar"));
+        songs.add(new Songs("Mera Dil Bhi Kitna Pagal Hai","Kumar Sanu","School"));
+        songs.add(new Songs("Wonderwall","Oasis","Hospital"));
+        songs.add(new Songs("Fix You","Coldplay","Palace"));
 
 
-        SongAdaptor itemsAdapter = new SongAdaptor(this, Songss);
+        SongAdaptor itemsAdapter = new SongAdaptor(this, songs);
 
         ListView listView = (ListView) findViewById(R.id.list);
 

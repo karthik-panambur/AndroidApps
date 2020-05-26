@@ -1,8 +1,8 @@
-package com.example.android.miwok;
+package com.example.android.musicapp;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +10,15 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.android.musicapp.R;
+import com.example.android.musicapp.Songs;
+
 import java.util.ArrayList;
 
-public class WordAdaptor extends ArrayAdapter<Word> {
+public class SongAdaptor extends ArrayAdapter<Songs> {
 
-    public WordAdaptor(Context context, ArrayList<Word> word){
-        super(context,0,word);
+    public SongAdaptor(Context context, ArrayList<Songs> songs){
+        super(context,0,songs);
     }
     @NonNull
     @Override
@@ -25,14 +28,16 @@ public class WordAdaptor extends ArrayAdapter<Word> {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
-        Word word = getItem(position);
+        Songs songs = getItem(position);
 
-        TextView englishText = (TextView) listItemView.findViewById(R.id.english);
-        englishText.setText(word.getDefaultTranslation());
+        TextView songText = (TextView) listItemView.findViewById(R.id.song);
+        songText.setText("Name: " + songs.getSong());
 
-        TextView miwokText = (TextView) listItemView.findViewById(R.id.miwok);
-        miwokText.setText(word.getMiwokTranslation());
+        TextView artistText = (TextView) listItemView.findViewById(R.id.artist);
+        artistText.setText("Artist: " + songs.getArtist());
 
+        TextView albumText = (TextView) listItemView.findViewById(R.id.album);
+        albumText.setText("Album: " + songs.getAlbum());
         return listItemView;
     }
 }

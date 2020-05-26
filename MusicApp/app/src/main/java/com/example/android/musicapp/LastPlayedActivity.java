@@ -15,24 +15,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class HistoryActivity extends AppCompatActivity {
+public class LastPlayedActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
+        setContentView(R.layout.activity_last_played);
         ArrayList<Songs> songs = new ArrayList<>();
-        songs.add(new Songs("one","lutti"));
-        songs.add(new Songs("two","otiiko"));
-        songs.add(new Songs("three","tolookosu"));
-        songs.add(new Songs("four","oyyisa"));
-        songs.add(new Songs("five","massokka"));
-        songs.add(new Songs("six","temmokka"));
-        songs.add(new Songs("seven","kenekaku"));
-        songs.add(new Songs("eight","kawinta"));
-        songs.add(new Songs("nine","wo'e"));
-        songs.add(new Songs("ten","na'aacha"));
-
+        songs.add(new Songs("The Way You Look Tonight","Fed Astaire", "1920"));
+        songs.add(new Songs("Old Hollywood","Julian Casablancas","Pecado"));
+        songs.add(new Songs("Diamonds Ares a Girls's Best Friend","Marilyn Monroe","Villa"));
+        songs.add(new Songs("The Trolley Song","Judy Garland","Los Leones"));
+        songs.add(new Songs("Put the Blame on Mame","Rita Hayworth","Boot Camp"));
+        songs.add(new Songs("Amado Mio","Rita Hayworth","Rozok"));
+        songs.add(new Songs("Stay With Me","Postmodern Jukebox","Gatka"));
 
 
         SongAdaptor itemsAdapter = new SongAdaptor(this, songs);

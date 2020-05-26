@@ -1,4 +1,4 @@
-package com.example.android.quakereport;
+package com.example.android.newsapp;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -20,7 +20,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 /**
- * Helper methods related to requesting and receiving earthquake data from USGS.
+ * Helper methods related to requesting and receiving news data from Guardian.
  */
 public final class QueryUtils {
     public static final String LOG_TAG = QueryUtils.class.getSimpleName();
@@ -33,10 +33,8 @@ public final class QueryUtils {
      * parsing a JSON response.
      */
 
-    public static ArrayList<News> fetchEarthquakeData(String requestUrl) {
+    public static ArrayList<News> fetchNewsData(String requestUrl) {
         // Create URL object
-
-
         URL url = createUrl(requestUrl);
 
 
@@ -96,7 +94,7 @@ public final class QueryUtils {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the news JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -126,35 +124,38 @@ public final class QueryUtils {
         return output.toString();
     }
 
-    /**
-     * Return an {@link News} object by parsing out information
-     * about the first earthquake from the input earthquakeJSON string.
-     */
-    private static ArrayList<News> extractFeatureFromJson(String earthquakeJSON) {
+
+    private static ArrayList<News> extractFeatureFromJson(String newsJson) {
         // If the JSON string is empty or null, then return early.
-        if (TextUtils.isEmpty(earthquakeJSON)) {
+        if (TextUtils.isEmpty(newsJson)) {
             return null;
         }
-        ArrayList<News> earthQuakes = new ArrayList<>();
+        ArrayList<News> news = new ArrayList<>();
 
         try {
-            JSONObject json = new JSONObject(earthquakeJSON);
-            JSONArray jsonArray = json.optJSONArray("features");
+            JSONObject json = new JSONObject(newsJson);
+            JSONArray jsonArray = json.optJSONObject("response").optJSONArray("results");
             for(int i = 0; i < jsonArray.length(); i++){
-                JSONObject innerObj = jsonArray.optJSONObject(i).optJSONObject("properties");
-                double magnitude = innerObj.optDouble("mag");
-                String location = innerObj.optString("place").toString();
-                long date = innerObj.getLong("time");
-                String url = innerObj.optString("url");
-                earthQuakes.add(new News(magnitude,location,date,url));
-                Log.e("hello", magnitude+location+url+date);
+                JSONObject innerObj = jsonArray.optJSONObject(i);
+                String sectioName = innerObj.optString("sectionName");
+                String webTitle = innerObj.optString("webTitle");
+                String dateTime = innerObj.optString("webPublicationDate");
+                String url = innerObj.optString("webUrl");
+                String author = "";
+                JSONArray tags = innerObj.optJSONArray("tags");
+                for(int j = 0; j < tags.length(); j++){
+                    String temp = tags.optJSONObject(j).optString("type");
+                    if(temp != null && temp.trim().equalsIgnoreCase("contributor"))
+                        author = tags.optJSONObject(j).optString("webTitle");
+                }
+                news.add(new News(sectioName,webTitle,url,dateTime,author));
             }
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
-            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+            Log.e("QueryUtils", "Problem parsing the news JSON results", e);
         }
-        return earthQuakes;
+        return news;
     }
 }

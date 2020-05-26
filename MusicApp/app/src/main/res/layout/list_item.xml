@@ -8,13 +8,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/miwok"
+        android:id="@+id/song"
         android:textSize="24sp"
         android:textColor="#000000"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/english"
+        android:id="@+id/artist"
+        android:textSize="24sp"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/album"
         android:textSize="24sp"
         android:textColor="#000000"/>
 

@@ -1,25 +1,23 @@
 package com.example.android.tourguideapp;
 
-import android.widget.ImageView;
-
 public class City {
     private String name;
     private String location;
     private int image = IMAGE_DEFAULT;
     private static final int IMAGE_DEFAULT = -1;
-    private String  contact;
+    private String  operatingHours;
 
     City(String name, String location, int image, String contact){
         this.name = name;
         this.location = location;
         this.image = image;
-        this.contact = contact;
+        this.operatingHours = contact;
     }
 
-    City(String name, String location, int image){
+    City(String name, String location, String operatingHours){
         this.name = name;
         this.location = location;
-        this.image = image;
+        this.operatingHours = operatingHours;
     }
 
     City(String name, String location){
@@ -27,14 +25,8 @@ public class City {
         this.location = location;
     }
 
-    public void setText(String name, String location, int image){
-        this.name = name;
-        this.location = location;
-        this.image = image;
-    }
-
     /**
-     * returns the corresponding name City
+     * returns the corresponding name
      * @return
      */
     public String getName(){
@@ -42,7 +34,7 @@ public class City {
     }
 
     /**
-     * return the correspondong location translation
+     * return the correspondong location
      * @return
      */
     public String getLocation(){
@@ -66,9 +58,9 @@ public class City {
     }
 
     /**
-     * returns the resource id of contact associated with the City
+     * returns the corresponding operating hours
      */
-    public String getcontact(){
-        return this.contact;
+    public String getOperatingHours(){
+        return this.operatingHours;
     }
 }
